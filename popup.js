@@ -1,10 +1,26 @@
 document.getElementById('close-duplicates').addEventListener('click', function() {
-  // Show loading message and hide the log initially
   document.getElementById('loading').style.display = 'block';
   document.getElementById('log').innerHTML = '';
 
-  // Send a message to the background service worker to close duplicate tabs
   chrome.runtime.sendMessage({ type: 'closeDuplicateTabs' });
+});
+
+// Load and display stored log data when the popup is opened
+chrome.storage.local.get(['closedTabsLog'], function(result) {
+  const logContainer = document.getElementById('log');
+  const loadingMessage = document.getElementById('loading');
+
+  // If there's stored log data, display it
+  if (result.closedTabsLog && result.closedTabsLog.length > 0) {
+    loadingMessage.style.display = 'none';
+
+    result.closedTabsLog.forEach(tab => {
+      const logEntry = document.createElement('div');
+      logEntry.className = 'log-entry';
+      logEntry.innerHTML = `Closed: ${tab.title} (${tab.url}) <div class="window-info">${tab.windowId}</div>`;
+      logContainer.appendChild(logEntry);
+    });
+  }
 });
 
 chrome.runtime.onMessage.addListener(function(message) {
@@ -12,11 +28,9 @@ chrome.runtime.onMessage.addListener(function(message) {
     const logContainer = document.getElementById('log');
     const loadingMessage = document.getElementById('loading');
 
-    // Hide loading message and show log
     loadingMessage.style.display = 'none';
-    logContainer.innerHTML = ''; // Clear existing log
+    logContainer.innerHTML = '';
 
-    // Display the closed tabs log with window information
     message.data.forEach(tab => {
       const logEntry = document.createElement('div');
       logEntry.className = 'log-entry';

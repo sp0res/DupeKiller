@@ -9,7 +9,8 @@
   },
   "permissions": [
     "tabs",
-    "windows"
+    "windows",
+    "storage"  
   ],
   "background": {
     "service_worker": "background.js"
