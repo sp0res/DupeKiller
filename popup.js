@@ -3,9 +3,8 @@ document.getElementById('close-duplicates').addEventListener('click', function()
   document.getElementById('loading').style.display = 'block';
   document.getElementById('log').innerHTML = '';
 
-  chrome.runtime.getBackgroundPage(function(backgroundPage) {
-    backgroundPage.closeDuplicateTabs();
-  });
+  // Send a message to the background service worker to close duplicate tabs
+  chrome.runtime.sendMessage({ type: 'closeDuplicateTabs' });
 });
 
 chrome.runtime.onMessage.addListener(function(message) {
@@ -21,7 +20,7 @@ chrome.runtime.onMessage.addListener(function(message) {
     message.data.forEach(tab => {
       const logEntry = document.createElement('div');
       logEntry.className = 'log-entry';
-      logEntry.innerHTML = `Closed: ${tab.title} (${tab.url}) <div class="window-info">Window ID: ${tab.windowId}</div>`;
+      logEntry.innerHTML = `Closed: ${tab.title} (${tab.url}) <div class="window-info">${tab.windowId}</div>`;
       logContainer.appendChild(logEntry);
     });
   }
