@@ -46,10 +46,15 @@ chrome.runtime.onMessage.addListener(function(message) {
 });
 
 // Theme toggle button logic
-document.getElementById('toggle-theme').addEventListener('click', function() {
+document.getElementById('theme-toggle').addEventListener('click', function() {
   document.body.classList.toggle('dark-theme');
   const isDarkTheme = document.body.classList.contains('dark-theme');
   
   // Save the theme preference
   chrome.storage.local.set({ theme: isDarkTheme ? 'dark' : 'light' });
+});
+
+// Info button logic
+document.getElementById('info-btn').addEventListener('click', function() {
+  alert("This extension closes duplicate tabs across all open windows in Opera GX. Use the 'Close Duplicate Tabs' button to remove duplicates. The theme toggle switches between light and dark mode.");
 });

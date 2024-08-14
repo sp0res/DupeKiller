@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Close Duplicate Tabs</title>
     <link rel="stylesheet" type="text/css" href="popup.css">
+
 </head>
+
 <body>
-    <button id="toggle-theme">Toggle Theme</button>
-    <button id="close-duplicates">Close Duplicate Tabs</button>
+
+  <p class="text">DupeKiller</p>
+    <div class="header">
+
+      <button class="img-size" id="close-duplicates">Close Duplicate Tabs</button>
+      
+    </div>
+     
     <div id="loading" style="display: none;">Closing duplicates...</div>
-    <div id="log"></div>
+
+    <div class="logger" id="log"></div>
+
+    <div class="footer">
+
+        <button class="img-size" id="theme-toggle" title="Toggle Theme">
+            <img src="icons/theme-icon.png" alt="Theme Toggle">
+        </button>
+
+        <button class="img-size" id="info-btn" title="Info">
+          <img src="icons/info-icon.png" alt="Info">
+        </button>
+
+        <button class="img-size" href="https://github.com/your-repo-link" id="github-link" title="GitHub">
+            <img src="icons/github-icon.png" alt="GitHub">
+        </button>
+
+    </div>
 
     <script src="popup.js"></script>
+    
 </body>
 </html>
