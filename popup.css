@@ -1,4 +1,4 @@
-.window-info {
+id.window-info {
     font-size: 0.8em;
     color: #666;
 }
@@ -10,12 +10,13 @@
 
 .footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin-top: 12px;
 }
 
 .img-size img {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
 }
 
 .logger {
@@ -26,6 +27,8 @@
 .text {
     display: flex;
     justify-content: center;
+    font-weight: bold;
+    font-size: larger;
 }
 
 /* Default light theme */
@@ -40,8 +43,10 @@ body {
 button {
     margin: 4px;
     padding: 5px 10px;
+    border: 1px solid #777;
     cursor: pointer;
-    color: #333;
+    color: #000000;
+    background-color: #e3e3e3;
     
 }
 
@@ -58,6 +63,7 @@ body.dark-theme {
 
 body.dark-theme #log .log-entry {
     border-bottom: 1px solid #555;
+    padding: 5px 0;
 }
 
 body.dark-theme .window-info {
@@ -68,6 +74,8 @@ body.dark-theme button {
     background-color: #555;
     color: white;
     border: 1px solid #777;
+    margin: 4px;
+    padding: 5px 10px;
     
 }
 

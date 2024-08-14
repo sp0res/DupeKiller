@@ -56,5 +56,5 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
 
 // Info button logic
 document.getElementById('info-btn').addEventListener('click', function() {
-  alert("This extension closes duplicate tabs across all open windows in Opera GX. Use the 'Close Duplicate Tabs' button to remove duplicates. The theme toggle switches between light and dark mode.");
+  alert("This extension closes duplicate tabs across all open windows of the browser. Use the 'Close Duplicate Tabs' button to remove duplicates. The theme toggle switches between light and dark mode. GitHub repository : https://github.com/sp0res/DupeKiller");
 });
