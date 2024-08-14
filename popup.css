@@ -1,0 +1,43 @@
+/* Default light theme */
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+button {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#log .log-entry {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+}
+
+.window-info {
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Dark theme */
+body.dark-theme {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-theme #log .log-entry {
+    border-bottom: 1px solid #555;
+}
+
+body.dark-theme .window-info {
+    color: #aaa;
+}
+
+body.dark-theme button {
+    background-color: #555;
+    color: white;
+    border: 1px solid #777;
+}
