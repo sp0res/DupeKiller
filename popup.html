@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Close Duplicate Tabs</title>
+  <style>
+    /* Light mode styling */
+    body {
+      width: 320px;
+      height: auto;
+      margin: 0;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #log {
+      margin-top: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .log-entry {
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .log-entry:last-child {
+      border-bottom: none;
+    }
+
+    .window-info {
+      font-size: 12px;
+      font-style: italic;
+      color: #555;
+      margin-top: 2px;
+    }
+
+    #loading {
+      display: none;
+      font-style: italic;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <button id="close-duplicates">Close Duplicate Tabs</button>
+  <div id="loading">Processing...</div>
+  <div id="log"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
