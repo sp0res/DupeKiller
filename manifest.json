@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Close Duplicate Tabs",
+  "name": "DupeKiller",
   "version": "1.0",
-  "description": "Close duplicate tabs across all windows.",
+  "description": "Close duplicate tabs (same URL) across all currently opened windows of the browser.",
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Close Duplicate Tabs"
+    "default_title": "DupeKiller"
   },
   "permissions": [
     "tabs",
